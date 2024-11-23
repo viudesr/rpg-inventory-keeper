@@ -1,0 +1,15 @@
+services:
+  django:
+    build: .
+    volumes:
+      - src:/usr/src/app
+    ports:
+      - 8000:8000
+
+volumes:
+  src:
+    driver: local
+    driver_opts:
+      o: volume
+      type: none
+      device: ./src
